@@ -1,0 +1,9 @@
+name: azuremlmlflow
+channels:
+    - defaults
+dependencies:
+    - numpy>=1.14.3
+    - pip
+- pip:
+    - mlflow
+    - keras==2.3.1
