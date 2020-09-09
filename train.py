@@ -8,6 +8,8 @@ from keras.models import Sequential
 from keras.layers import Dense, Dropout, Activation
 from keras.preprocessing.text import Tokenizer
 
+import sys
+
 # The following import and function call are the only additions to code required
 # to automatically log metrics and parameters to MLflow.
 import mlflow.keras
@@ -16,7 +18,7 @@ mlflow.keras.autolog()
 
 max_words = 1000
 batch_size = 32
-epochs = 5
+epochs = int(sys.argv[1] if len(sys.argv) > 1 else 5
 
 print("Loading data...")
 (x_train, y_train), (x_test, y_test) = reuters.load_data(num_words=max_words, test_split=0.2)
