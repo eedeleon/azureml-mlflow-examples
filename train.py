@@ -18,7 +18,7 @@ mlflow.keras.autolog()
 
 max_words = 1000
 batch_size = 32
-epochs = int(sys.argv[1] if len(sys.argv) > 1 else 5
+epochs = int(sys.argv[1]) if len(sys.argv) > 1 else 5
 
 print("Loading data...")
 (x_train, y_train), (x_test, y_test) = reuters.load_data(num_words=max_words, test_split=0.2)
